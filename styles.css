@@ -1,0 +1,63 @@
+h1 {
+  border: 2px solid #f24c3d;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: linear-gradient(64deg, #f29727, #22a699);
+  position: relative;
+  z-index: 1;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(52, 152, 219, 0.7);
+  border-radius: 10px;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+h1:hover::before {
+  filter: blur(10px);
+  top: 10px;
+  left: 8px;
+}
+
+body {
+  background: linear-gradient(135deg, #f2be22, #22a699);
+  font-family: "Courier New", Courier, monospace;
+}
+
+form {
+  margin-bottom: 32px;
+}
+.memes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+div {
+  position: relative;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+}
+
+.top-text {
+  position: absolute;
+  top: 8px;
+  width: 100%;
+}
+
+.bottom-text {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+}
