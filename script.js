@@ -1,6 +1,6 @@
 const form = document.querySelector("form");
 const submitButton = document.querySelector("#submit");
-const memeSelection = document.querySelector(".memes");
+const memeSection = document.querySelector(".memes");
 const inputs = document.querySelectorAll("input:not(#submit)");
 
 submitButton.addEventListener("click", (event) => {
@@ -15,6 +15,7 @@ submitButton.addEventListener("click", (event) => {
     addMeme(formattedData);
   }
 });
+
 function formatData(data) {
   return data.reduce(
     (data, input) => ({ ...data, [input.id]: input.value }),
@@ -32,9 +33,10 @@ function addMeme(data) {
   const topText = document.createElement("p");
   const bottomText = document.createElement("p");
 
-  img.src = data.imageUrl;
+  image.src = data.imageUrl;
   topText.textContent = data.topText;
   bottomText.textContent = data.bottomText;
+
   topText.classList.add("top-text");
   bottomText.classList.add("bottom-text");
 
@@ -46,5 +48,5 @@ function addMeme(data) {
     div.remove();
   });
 
-  memeSelection.append(div);
+  memeSection.append(div);
 }
